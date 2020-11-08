@@ -16,7 +16,15 @@ build: Dockerfile
 	docker build -t $(NAME) .
 
 bash:
-	docker run --rm -it -v $(PWD):/app -w /app $(NAME) $@
+	docker run \
+		--rm \
+		-it \
+		--cap-add=SYS_PTRACE \
+		--security-opt="seccomp=unconfined" \
+		-v $(PWD):/app \
+		-w /app \
+		$(NAME) \
+		$@
 
 deps/make:
 	$(MAKE) $@

@@ -5,11 +5,13 @@ RUN apt-get update && \
       ca-certificates \
       build-essential \
       locales \
+      automake \
       autoconf \
       autoconf-doc \
       autopoint \
       pkg-config \
       texinfo \
+      gdb \
       curl \
       wget \
       less \

@@ -13,6 +13,7 @@ dependencies:
 build: deps/make
 	cd $< && ./bootstrap
 	cd $< && ./configure
+	make -C $<
 
 deps/make: deps
 	git clone --depth=1 git@github.com:mirror/make.git $@
